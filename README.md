@@ -6,6 +6,14 @@
 
 The instructions below will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+## Features
+* Main Hub - With database
+* Docking Hubs
+* Bikes
+* Payment System
+* Instructions
+  * Optional: Subtitles, Audio Descriptions, Multi-Lingual
+
 ## Authors
 * Charlene Bastians - [@CharSV5](https://github.com/CharSV5)
 * Hemesh Unka - [@Hemesh-Unka](https://github.com/hemesh-unka)
