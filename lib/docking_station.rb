@@ -1,4 +1,4 @@
-# create new DockingStation class
+# create new Docking Station class
 class DockingStation
   def release_bike
     Bike.new
@@ -8,7 +8,6 @@ end
 # create new Bike class
 class Bike
   def working?
-    puts 'It is working'
   end
 end
 
