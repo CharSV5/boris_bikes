@@ -17,8 +17,8 @@ describe DockingStation do
   describe 'no more bikes error message' do
     it { expect {DockingStation.new.release_bike}.to raise_error("Sorry, there are no more bikes.") }
   end
-  describe 'cannot except more bikes' do
-    station = DockingStation.new(1)
-    it {expect {station.dock_bike(Bike.new)}.to raise_error("Sorry, there aren't any spaces to dock") }
+  describe 'cannot except more than 20 bikes' do
+    station = DockingStation.new
+    it { expect{21.times { station.dock_bike Bike.new }}.to raise_error("Sorry, there aren't any spaces to dock") }
   end
-end 
+end

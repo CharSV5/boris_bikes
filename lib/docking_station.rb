@@ -13,12 +13,12 @@ class DockingStation
     end
   end
   def dock_bike(bike)
-    if @bikes.length == 1
+    if @bikes.length >= 20
       raise "Sorry, there aren't any spaces to dock"
     else
       @bikes.push(bike)
     end
-  end 
+  end
 end
 
 # create new Bike class
