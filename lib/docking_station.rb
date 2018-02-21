@@ -1,7 +1,7 @@
 # create new DockingStation class
 class DockingStation
   def release_bike
-    Bike.new
+   Bike.new
   end
 end
 
@@ -11,6 +11,3 @@ class Bike
     puts 'It is working'
   end
 end
-
-docking_station = DockingStation.new
-bike = docking_station.release_bike.working?
