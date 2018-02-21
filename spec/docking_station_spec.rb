@@ -12,4 +12,12 @@ describe DockingStation do
     describe "gets bike, is bike working?" do
       it { expect(DockingStation.new.release_bike).to respond_to(:working?)}
     end
+  describe "docking bike" do
+    it { expect(DockingStation.new).to respond_to (:dock_bike)}
+  end
+  describe "can a user dock a bike" do
+    station = DockingStation.new
+    it { expect(station.dock_bike(station.release_bike)).to eq (station.bikes) }
+  end
+
 end
