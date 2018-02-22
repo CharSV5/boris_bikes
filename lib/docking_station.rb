@@ -3,8 +3,10 @@ class DockingStation
   attr_reader :bikes
   def initialize(number_of_bikes = 0)
     @bikes = []
+    @capacity = 20
     number_of_bikes.times {@bikes.push(Bike.new)}
   end
+
   def release_bike
     if @bikes.empty?
       raise "Sorry, there are no more bikes."
@@ -12,8 +14,15 @@ class DockingStation
       Bike.new
     end
   end
+
+  private
+  def full?
+    @bikes.length >= @capacity
+  end
+
+
   def dock_bike(bike)
-    if @bikes.length >= 20
+    if full?
       raise "Sorry, there aren't any spaces to dock"
     else
       @bikes.push(bike)
