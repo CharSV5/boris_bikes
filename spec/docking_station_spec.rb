@@ -5,7 +5,6 @@ describe DockingStation do
   end
   describe 'gets bike, is bike working?' do
     station = DockingStation.new
-    station.bikes.push(1)
     it { expect(station.release_bike).to respond_to (:working?) }
   end
   describe 'docking bike' do

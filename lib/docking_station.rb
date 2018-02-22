@@ -11,9 +11,18 @@ class DockingStation
   def release_bike
     if @bikes.empty?
       raise "Sorry, there are no more bikes."
-    else
-      @hired_bike = bikes.shift
     end
+    @hired_bike = nil
+    while @hired_bike == nil
+      sample = self.bikes.sample
+      if sample.working?
+        i = self.bikes.index(sample)
+        @hired_bike = sample
+        self.bikes.delete_at(i)
+        break
+      end
+    end
+    @hired_bike
   end
 
   def dock_bike(bike)
