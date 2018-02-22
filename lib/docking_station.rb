@@ -1,17 +1,18 @@
 # create new Docking Station class
 class DockingStation
-  attr_reader :bikes
-  def initialize(number_of_bikes = 0)
+  attr_reader :bikes, :capacity, :hired_bike
+  Default_Capacity = 20
+  def initialize(capacity = Default_Capacity)
+    @capacity = capacity
     @bikes = []
-    @capacity = 20
-    number_of_bikes.times {@bikes.push(Bike.new)}
+    capacity.times {@bikes.push(Bike.new)}
   end
 
   def release_bike
     if @bikes.empty?
       raise "Sorry, there are no more bikes."
     else
-      Bike.new
+      @hired_bike = bikes.shift
     end
   end
 
@@ -25,12 +26,23 @@ class DockingStation
 
   private
   def full?
-    @bikes.length >= @capacity
+    @bikes.length >= Default_Capacity
   end
 end
 
 # create new Bike class
 class Bike
+  def initialize(working_order = 'working')
+    @working_order = working_order
+  end
   def working?
+    @working_order == 'working'
+  end
+
+  def broken?
+    @working_order == 'broken'
+  end
+  def report_broken
+    @working_order = 'broken'
   end
 end
