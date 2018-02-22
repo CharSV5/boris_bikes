@@ -12,6 +12,9 @@ class DockingStation
     if @bikes.empty?
       raise "Sorry, there are no more bikes."
     end
+    if self.bikes.select {|b| b.broken?}.length >= @capacity
+      raise 'Sorry, all remaining bikes are broken'
+    end 
     @hired_bike = nil
     while @hired_bike == nil
       sample = self.bikes.sample
